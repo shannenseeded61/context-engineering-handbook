@@ -4,12 +4,12 @@
 
 ### The practitioner's guide to building effective context for AI agents and LLM applications.
 
-**15 patterns** | **7 categories** | **Python + TypeScript** | **Benchmarks** | **4 framework integrations**
+**35 patterns** | **7 categories** | **Python + TypeScript** | **Benchmarks** | **4 framework integrations**
 
 [![GitHub Stars](https://img.shields.io/github/stars/ypollak2/context-engineering-handbook?style=flat&logo=github&label=Stars)](https://github.com/ypollak2/context-engineering-handbook/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Patterns](https://img.shields.io/badge/Patterns-15%20shipped-orange.svg)](#pattern-catalog)
+[![Patterns](https://img.shields.io/badge/Patterns-35%20shipped-orange.svg)](#pattern-catalog)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white)](#examples)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?logo=typescript&logoColor=white)](#examples)
 
@@ -19,7 +19,7 @@
 
 Context engineering is the discipline of building the right information environment so an LLM can solve your actual problem. It was [named by Tobi Lutke](https://x.com/tobi/status/1925629163972653200) and [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) in 2025, and it's quickly becoming the single most important skill in AI engineering.
 
-**This is not another blog post or awesome-list.** This is a pattern catalog: 15 battle-tested patterns with runnable code, decision frameworks, and documented anti-patterns. Pick a problem, find the pattern, ship it.
+**This is not another blog post or awesome-list.** This is a pattern catalog: 35 battle-tested patterns with runnable code, decision frameworks, and documented anti-patterns. Pick a problem, find the pattern, ship it.
 
 ---
 
@@ -83,76 +83,68 @@ Or use the [Interactive Decision Tree](interactive/) for a guided walkthrough.
 | 1 | [System Prompt Architecture](patterns/construction/system-prompt-architecture.md) | Structure system prompts for maximum instruction adherence | Low |
 | 2 | [Progressive Disclosure](patterns/construction/progressive-disclosure.md) | Reveal context incrementally based on task state | Medium |
 | 3 | [Few-Shot Curation](patterns/construction/few-shot-curation.md) | Select and order examples for optimal in-context learning | Medium |
+| 4 | [Dynamic Persona Assembly](patterns/construction/dynamic-persona-assembly.md) | Compose agent personas from trait modules at runtime | Medium |
+| 5 | [Schema-Guided Generation](patterns/construction/schema-guided-generation.md) | Constrain output with schemas for structured, validated responses | Low |
+| 6 | [Template Composition](patterns/construction/template-composition.md) | Build prompts from reusable template fragments with inheritance | Medium |
+| 7 | [Constraint Injection](patterns/construction/constraint-injection.md) | Dynamically inject rules based on environment, tier, or compliance | Low |
 
 ### Retrieval -- Pulling the right context at the right time
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 4 | [Just-in-Time Retrieval](patterns/retrieval/just-in-time-retrieval.md) | Fetch context only when the model signals it needs it | Medium |
-| 5 | [RAG Context Assembly](patterns/retrieval/rag-context-assembly.md) | Assemble retrieved chunks into coherent, structured context | High |
-| 6 | [Semantic Tool Selection](patterns/retrieval/semantic-tool-selection.md) | Dynamically select which tools to present based on the task | Medium |
+| 8 | [Just-in-Time Retrieval](patterns/retrieval/just-in-time-retrieval.md) | Fetch context only when the model signals it needs it | Medium |
+| 9 | [RAG Context Assembly](patterns/retrieval/rag-context-assembly.md) | Assemble retrieved chunks into coherent, structured context | High |
+| 10 | [Semantic Tool Selection](patterns/retrieval/semantic-tool-selection.md) | Dynamically select which tools to present based on the task | Medium |
+| 11 | [Hybrid Search Fusion](patterns/retrieval/hybrid-search-fusion.md) | Combine keyword, semantic, and graph retrieval with rank fusion | High |
+| 12 | [Context-Aware Re-ranking](patterns/retrieval/context-aware-reranking.md) | Re-rank results using full conversation context, not just the query | High |
+| 13 | [Temporal Context Selection](patterns/retrieval/temporal-context-selection.md) | Prioritize recent and version-correct context with time-decay | Medium |
 
 ### Compression -- Fitting more signal into fewer tokens
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 7 | [Conversation Compaction](patterns/compression/conversation-compaction.md) | Summarize conversation history without losing critical details | Medium |
-| 8 | [Observation Masking](patterns/compression/observation-masking.md) | Filter tool outputs to keep only what matters | Low |
+| 14 | [Conversation Compaction](patterns/compression/conversation-compaction.md) | Summarize conversation history without losing critical details | Medium |
+| 15 | [Observation Masking](patterns/compression/observation-masking.md) | Filter tool outputs to keep only what matters | Low |
+| 16 | [Hierarchical Summarization](patterns/compression/hierarchical-summarization.md) | Multi-tier summaries: full detail recent, compressed older | Medium |
+| 17 | [Token Budget Allocation](patterns/compression/token-budget-allocation.md) | Budget context window across competing components | Medium |
+| 18 | [Lossy Context Distillation](patterns/compression/lossy-context-distillation.md) | Extract only task-relevant facts, discard everything else | High |
 
 ### Isolation -- Scoping context to prevent contamination
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 9 | [Sub-Agent Delegation](patterns/isolation/sub-agent-delegation.md) | Spawn focused sub-agents with minimal, task-specific context | High |
-| 10 | [Multi-Agent Context Orchestration](patterns/isolation/multi-agent-context-orchestration.md) | Coordinate context flow across multiple collaborating agents | High |
+| 19 | [Sub-Agent Delegation](patterns/isolation/sub-agent-delegation.md) | Spawn focused sub-agents with minimal, task-specific context | High |
+| 20 | [Multi-Agent Context Orchestration](patterns/isolation/multi-agent-context-orchestration.md) | Coordinate context flow across multiple collaborating agents | High |
+| 21 | [Sandbox Contexts](patterns/isolation/sandbox-contexts.md) | Disposable environments for risky or exploratory operations | Medium |
+| 22 | [Role-Based Context Partitioning](patterns/isolation/role-based-context-partitioning.md) | Filter context visibility based on the agent's current role | Medium |
 
 ### Persistence -- Remembering across sessions and runs
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 11 | [Episodic Memory](patterns/persistence/episodic-memory.md) | Store and retrieve task-specific memories across sessions | Medium |
-| 12 | [Filesystem-as-Memory](patterns/persistence/filesystem-as-memory.md) | Use structured files as durable, inspectable agent memory | Low |
+| 23 | [Episodic Memory](patterns/persistence/episodic-memory.md) | Store and retrieve task-specific memories across sessions | Medium |
+| 24 | [Filesystem-as-Memory](patterns/persistence/filesystem-as-memory.md) | Use structured files as durable, inspectable agent memory | Low |
+| 25 | [Semantic Memory Indexing](patterns/persistence/semantic-memory-indexing.md) | Vector-indexed retrieval across all stored knowledge | High |
+| 26 | [Cross-Session State Sync](patterns/persistence/cross-session-state-sync.md) | Synchronize agent state across concurrent sessions | High |
+| 27 | [Memory Consolidation](patterns/persistence/memory-consolidation.md) | Merge, deduplicate, and prune accumulated memories | Medium |
 
 ### Optimization -- Squeezing more performance from your context budget
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 13 | [KV-Cache Optimization](patterns/optimization/kv-cache-optimization.md) | Structure prompts to maximize key-value cache hit rates | Medium |
-| 14 | [Error Preservation](patterns/optimization/error-preservation.md) | Persist error context to prevent repeated failures | Low |
+| 28 | [KV-Cache Optimization](patterns/optimization/kv-cache-optimization.md) | Structure prompts to maximize key-value cache hit rates | Medium |
+| 29 | [Error Preservation](patterns/optimization/error-preservation.md) | Persist error context to prevent repeated failures | Low |
+| 30 | [Prompt Caching Strategies](patterns/optimization/prompt-caching-strategies.md) | Multi-level caching for prompts, responses, and components | High |
+| 31 | [Parallel Context Assembly](patterns/optimization/parallel-context-assembly.md) | Fetch context from multiple sources concurrently | Medium |
+| 32 | [Incremental Context Updates](patterns/optimization/incremental-context-updates.md) | Patch context with diffs instead of rebuilding from scratch | Medium |
 
 ### Evaluation -- Measuring context quality over time
 
 | # | Pattern | Description | Complexity |
 |---|---------|-------------|------------|
-| 15 | [Context Rot Detection](patterns/evaluation/context-rot-detection.md) | Detect when accumulated context degrades model performance | High |
-
-<details>
-<summary><strong>Coming in v2</strong> (20 additional patterns)</summary>
-
-| Category | Pattern | Status |
-|----------|---------|--------|
-| Construction | Dynamic Persona Assembly | Planned |
-| Construction | Schema-Guided Generation | Planned |
-| Construction | Template Composition | Planned |
-| Construction | Constraint Injection | Planned |
-| Retrieval | Hybrid Search Fusion | Planned |
-| Retrieval | Context-Aware Re-ranking | Planned |
-| Retrieval | Temporal Context Selection | Planned |
-| Compression | Hierarchical Summarization | Planned |
-| Compression | Token Budget Allocation | Planned |
-| Compression | Lossy Context Distillation | Planned |
-| Isolation | Sandbox Contexts | Planned |
-| Isolation | Role-Based Context Partitioning | Planned |
-| Persistence | Semantic Memory Indexing | Planned |
-| Persistence | Cross-Session State Sync | Planned |
-| Persistence | Memory Consolidation | Planned |
-| Optimization | Prompt Caching Strategies | Planned |
-| Optimization | Parallel Context Assembly | Planned |
-| Optimization | Incremental Context Updates | Planned |
-| Evaluation | Context Coverage Analysis | Planned |
-| Evaluation | Ablation Testing | Planned |
-
-</details>
+| 33 | [Context Rot Detection](patterns/evaluation/context-rot-detection.md) | Detect when accumulated context degrades model performance | High |
+| 34 | [Context Coverage Analysis](patterns/evaluation/context-coverage-analysis.md) | Check if context contains all info needed for the current query | Medium |
+| 35 | [Ablation Testing](patterns/evaluation/ablation-testing.md) | Measure each context component's contribution to output quality | High |
 
 ## Interactive Decision Tree
 
@@ -267,7 +259,7 @@ Browse all examples in the [examples directory](examples/).
 - [x] **v1.0** -- 15 core patterns with Python + TypeScript examples
 - [x] **v1.1** -- Interactive decision tree (HTML/JS)
 - [x] **v1.2** -- Anti-patterns documentation (7 anti-patterns)
-- [ ] **v2.0** -- 20 additional patterns (35 total)
+- [x] **v2.0** -- 20 additional patterns (35 total)
 - [x] **v2.1** -- Benchmark suite for context quality evaluation
 - [x] **v2.2** -- Framework integrations (LangChain, LlamaIndex, Semantic Kernel, Vercel AI SDK)
 - [ ] **v3.0** -- Visual context debugger
