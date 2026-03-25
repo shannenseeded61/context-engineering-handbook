@@ -1,16 +1,10 @@
 <div align="center">
 
-```
-   ___            _            _     ___           _                      _
-  / __\___  _ __ | |_ _____  _| |_  / __\ __   __(_)_ __   ___  ___ _ __(_)_ __   __ _
- / /  / _ \| '_ \| __/ _ \ \/ / __|/ _\ '_ \ / _` | '_ \ / _ \/ _ \ '__| | '_ \ / _` |
-/ /__| (_) | | | | ||  __/>  <| |_/ /  | | | | (_| | | | |  __/  __/ |  | | | | | (_| |
-\____/\___/|_| |_|\__\___/_/\_\\__\/   |_| |_|\__, |_| |_|\___|\___|_|  |_|_| |_|\__, |
-                                               |___/                               |___/
-                          H A N D B O O K
-```
+# Context Engineering Handbook
 
-**The practitioner's guide to building effective context for AI agents and LLM applications.**
+### The practitioner's guide to building effective context for AI agents and LLM applications.
+
+**15 patterns** | **7 categories** | **Python + TypeScript** | **Benchmarks** | **4 framework integrations**
 
 [![GitHub Stars](https://img.shields.io/github/stars/ypollak2/context-engineering-handbook?style=flat&logo=github&label=Stars)](https://github.com/ypollak2/context-engineering-handbook/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -23,7 +17,7 @@
 
 ---
 
-Context engineering is the discipline of building the right information environment so an LLM can solve your actual problem. It was [named by Tobi Lutke](https://x.com/toaborern/status/1925629163972653200) and [Andrej Karpathy](https://x.com/karpathy/status/1925942699000275282) in 2025, and it's quickly becoming the single most important skill in AI engineering.
+Context engineering is the discipline of building the right information environment so an LLM can solve your actual problem. It was [named by Tobi Lutke](https://x.com/tobi/status/1925629163972653200) and [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) in 2025, and it's quickly becoming the single most important skill in AI engineering.
 
 **This is not another blog post or awesome-list.** This is a pattern catalog: 15 battle-tested patterns with runnable code, decision frameworks, and documented anti-patterns. Pick a problem, find the pattern, ship it.
 
@@ -37,6 +31,8 @@ Context engineering is the discipline of building the right information environm
 - [Interactive Decision Tree](#interactive-decision-tree)
 - [Pattern Structure](#how-each-pattern-is-structured)
 - [Anti-Patterns](#anti-patterns)
+- [Benchmarks](#benchmarks)
+- [Framework Integrations](#framework-integrations)
 - [Examples](#examples)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -207,6 +203,43 @@ Knowing what NOT to do is just as important. The [anti-patterns directory](anti-
 - **The Infinite Loop** -- Retrying failures with no new information
 - **Context Isolation Neglect** -- Running all work in a single context window
 
+## Benchmarks
+
+Measure how well your context engineering is working with 5 benchmarks:
+
+| Benchmark | What It Measures | Low Score Means |
+|-----------|-----------------|-----------------|
+| [Needle in Haystack](benchmarks/) | Fact retrieval across context positions | Apply Progressive Disclosure |
+| [Instruction Adherence](benchmarks/) | System prompt rule compliance | Apply System Prompt Architecture |
+| [Compression Fidelity](benchmarks/) | Info preservation after compaction | Apply Conversation Compaction |
+| [Retrieval Relevance](benchmarks/) | Retrieved chunk usefulness | Apply RAG Context Assembly |
+| [Token Efficiency](benchmarks/) | Signal-to-noise ratio | Apply Observation Masking |
+
+```bash
+# Python
+cd benchmarks/python && pip install -r requirements.txt
+python runner.py --all --model gpt-4o
+
+# TypeScript
+cd benchmarks/typescript && npm install
+npx tsx src/runner.ts --all --model gpt-4o
+```
+
+See the [benchmarks README](benchmarks/README.md) for score interpretation and full docs.
+
+## Framework Integrations
+
+Apply handbook patterns using your framework of choice:
+
+| Framework | Patterns | Languages |
+|-----------|----------|-----------|
+| [LangChain](integrations/langchain/) | Progressive Disclosure, Conversation Compaction, RAG Assembly, Tool Selection, Sub-Agent Delegation | Python, TypeScript |
+| [LlamaIndex](integrations/llamaindex/) | RAG Assembly, Episodic Memory, Context Rot Detection | Python, TypeScript |
+| [Semantic Kernel](integrations/semantic-kernel/) | System Prompt Architecture, Tool Selection, KV-Cache Optimization | Python |
+| [Vercel AI SDK](integrations/vercel-ai-sdk/) | Progressive Disclosure, Conversation Compaction, Error Preservation | TypeScript |
+
+See the [integrations README](integrations/README.md) for setup guides and full docs.
+
 ## Examples
 
 Every pattern ships with runnable examples in both Python and TypeScript.
@@ -235,8 +268,8 @@ Browse all examples in the [examples directory](examples/).
 - [x] **v1.1** -- Interactive decision tree (HTML/JS)
 - [x] **v1.2** -- Anti-patterns documentation (7 anti-patterns)
 - [ ] **v2.0** -- 20 additional patterns (35 total)
-- [ ] **v2.1** -- Benchmark suite for context quality evaluation
-- [ ] **v2.2** -- Framework integrations (LangChain, LlamaIndex, Semantic Kernel)
+- [x] **v2.1** -- Benchmark suite for context quality evaluation
+- [x] **v2.2** -- Framework integrations (LangChain, LlamaIndex, Semantic Kernel, Vercel AI SDK)
 - [ ] **v3.0** -- Visual context debugger
 
 ## Contributing
