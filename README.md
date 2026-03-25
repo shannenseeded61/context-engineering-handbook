@@ -12,7 +12,7 @@
 
 **The practitioner's guide to building effective context for AI agents and LLM applications.**
 
-[![GitHub Stars](https://img.shields.io/github/stars/yalipollak/context-engineering-handbook?style=flat&logo=github&label=Stars)](https://github.com/yalipollak/context-engineering-handbook/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/ypollak2/context-engineering-handbook?style=flat&logo=github&label=Stars)](https://github.com/ypollak2/context-engineering-handbook/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Patterns](https://img.shields.io/badge/Patterns-15%20shipped-orange.svg)](#pattern-catalog)
@@ -255,7 +255,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 <!-- ## Star History -->
 
-<!-- [![Star History Chart](https://api.star-history.com/svg?repos=yalipollak/context-engineering-handbook&type=Date)](https://star-history.com/#yalipollak/context-engineering-handbook&Date) -->
+<!-- [![Star History Chart](https://api.star-history.com/svg?repos=ypollak2/context-engineering-handbook&type=Date)](https://star-history.com/#ypollak2/context-engineering-handbook&Date) -->
 
 ## License
 
@@ -267,6 +267,6 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 **Built for developers who ship AI to production.**
 
-[Report an Issue](https://github.com/yalipollak/context-engineering-handbook/issues) | [Request a Pattern](https://github.com/yalipollak/context-engineering-handbook/issues/new?labels=pattern-request) | [Discussions](https://github.com/yalipollak/context-engineering-handbook/discussions)
+[Report an Issue](https://github.com/ypollak2/context-engineering-handbook/issues) | [Request a Pattern](https://github.com/ypollak2/context-engineering-handbook/issues/new?labels=pattern-request) | [Discussions](https://github.com/ypollak2/context-engineering-handbook/discussions)
 
 </div>
